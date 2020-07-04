@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Strategy Tester</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" />
+    <!-- Use cdn assets -->
+    <link rel="stylesheet" href="https://pwcappkit-static.azureedge.net/cdn/release/3.0.0/vendor.min.css">
+    <link rel="stylesheet" href=" https://pwcappkit-static.azureedge.net/cdn/release/3.0.0/appkit.min.css">
+    <link rel="stylesheet" href="./css/custom-styles.css">
+  </head>
+
+  <body>
+    <div class="d-flex flex-column h-100">
+        <div class="a-header d-flex align-items-center justify-content-between a-px-20">
+            <div class="d-flex align-items-center">
+                <div><img src="./assets/Logo_Primary_Black.png" alt=""></div>
+                <span class="divider a-mx-20"></span>
+                <div class="font-weight-medium main-header">Dynamic and Resilient Strategy</div>
+                <span class="divider-full a-ml-20 a-mr-10"></span>
+                <div class="a-dropdown a-dropdown-one">
+                    <div class="a-dropdown-toggle">
+                        <div class="a-choosen-text">Current State</div>
+                        <i class="a-icon appkiticon icon-down-chevron-fill"></i>
+                    </div>
+                    <div class="a-dropdown-menu">
+                        <ul>
+                            <li><a href="./current-summary.html">Current State Summary</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="a-dropdown a-dropdown-one">
+                    <div class="a-dropdown-toggle">
+                        <div class="a-choosen-text">Future Scenarios</div>
+                        <i class="a-icon appkiticon icon-down-chevron-fill"></i>
+                    </div>
+                    <div class="a-dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="./future-scenarios.html">Scenario Editor</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="a-dropdown a-dropdown-one">
+                    <div class="a-dropdown-toggle">
+                        <div class="a-choosen-text">Results</div>
+                        <i class="a-icon appkiticon icon-down-chevron-fill"></i>
+                    </div>
+                    <div class="a-dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="./market-level.html">Market Level</a>
+                            </li>
+                            <li>
+                                <a href="./scenariopayer.html">Firm Level Payer</a>
+                            </li>
+                            <li>
+                                <a href="./scenarioprovider.html">Firm Level Provider</a>
+                            </li>
+                            <li>
+                                <a href="#">Strategy Tester</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <a class="a-btn a-btn-primary a-btn-lg" href="./index.html">SELECT NEW MARKET</a>
+            </div>
+           
+        </div>
+        <div class="d-flex content flex-fill">
+            <div class="main-wrapper flex-fill d-flex flex-column">
+                <div class="a-p-20 text-center rounded ajax-loader">
+                    <span class="a-loading loading-large a-dark"></span>
+                    <div class="a-text-black a-mt-10 a-h6">Strategy is being made real. Please wait ....</div>
+                </div>
+                <div class="container-fluid" style="visibility:hidden;">
+                    <div class="row">
+                        <div class="col">
+                            <div aria-label="breadcrumb" class="a-breadcrumbs a-mt-20">
+                                <div class="a-bread-item text-decoration-none">
+                                    <a href="./current-summary.html"><span class="appkiticon icon-home-fill"></span></a>
+                                </div>
+                                <span class="a-divider">/</span>
+                                <div class="a-bread-item">
+                                    <span>Results</span>
+                                </div>
+                                <span class="a-divider">/</span>
+                                <div class="a-bread-item a-current">
+                                    <span>Strategy Tester Payer</span>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col">
+                        <div class="p-2">
+                          <label>Year 2025</label>
+                        </div>
+                    </div>
+          
+                    <div class="col">
+                        <div class="p-2 d-flex" >
+                            <span class="metro-label">Metro Areas</span>  
+                            <select class="a-select msa-metro">
+                            </select>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="row bg-gray">
+                        <div class="col">
+                            <div class="a-tab-container a-overflow-visible m-auto a-p-10">
+                                <ul class="a-tab-fun a-tab">
+                                    <li class="a-tab-item active" tabindex="0" target="#provider_strategy_tester">Provider Strategy Tester</li>
+                                    <li class="a-tab-item" tabindex="0" target="#payer_strategy_tester ">Payer Strategy Tester</li>
+                                    <li class="a-tab-item" tabindex="0" target="#strategies_impact_payer">Strategies Impact Payer</li>
+                                    <li class="a-tab-item" tabindex="0" target="#strategies_impac_health_system">Strategies Impact Health System</li>
+                                </ul>
+                                <div class="a-tab-targets">
+                                    <div class="a-tab-target-item p-2" id="provider_strategy_tester">
+                                        <table class="a-table provider_strategy_tester">
+                                            <thead class="a-thead">
+                                                <tr>
+                                                   <th></th>
+                                                   <th></th>
+                                                   <th colspan="9">Strategy 1</th>
+                                                   <th colspan="9">Strategy 2</th>
+                                                   <th colspan="9">Strategy 3</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Profit Pool</th>
+                                                    <th>Metric</th>
+                                                    <th>Mean</th>
+                                                    <th>Variation</th>
+                                                    <th>2019</th>
+                                                    <th>2020</th>
+                                                    <th>2021</th>
+                                                    <th>2022</th>
+                                                    <th>2023</th>
+                                                    <th>2024</th>
+                                                    <th>2025</th>
+
+                                                    <th>Profit Pool</th>
+                                                    <th>Metric</th>
+                                                    <th>Mean</th>
+                                                    <th>Variation</th>
+                                                    <th>2019</th>
+                                                    <th>2020</th>
+                                                    <th>2021</th>
+                                                    <th>2022</th>
+                                                    <th>2023</th>
+                                                    <th>2024</th>
+                                                    <th>2025</th>
+
+                                                    <th>Profit Pool</th>
+                                                    <th>Metric</th>
+                                                    <th>Mean</th>
+                                                    <th>Variation</th>
+                                                    <th>2019</th>
+                                                    <th>2020</th>
+                                                    <th>2021</th>
+                                                    <th>2022</th>
+                                                    <th>2023</th>
+                                                    <th>2024</th>
+                                                    <th>2025</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="a-tbody" id="tbody_provider_strategy_tester">
+                                            </tbody>
+                                        </table>
+                                        <button class="a-btn a-btn-primary a-btn-lg save_provider">Save</button>
+                                    </div>
+                                    <div class="a-tab-target-item p-2" id="payer_strategy_tester">
+                                        <table class="a-table min-w-1024 payer_strategy_tester">
+                                            <thead class="a-thead">
+                                                <tr>
+                                                   <th></th>
+                                                   <th></th>
+                                                   <th colspan="9">Strategy 1</th>
+                                                   <th colspan="9">Strategy 2</th>
+                                                   <th colspan="9">Strategy 3</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Profit Pool</th>
+                                                    <th>Metric</th>
+                                                    <th>Mean</th>
+                                                    <th>Variation</th>
+                                                    <th>2019</th>
+                                                    <th>2020</th>
+                                                    <th>2021</th>
+                                                    <th>2022</th>
+                                                    <th>2023</th>
+                                                    <th>2024</th>
+                                                    <th>2025</th>
+
+                                                    <th>Profit Pool</th>
+                                                    <th>Metric</th>
+                                                    <th>Mean</th>
+                                                    <th>Variation</th>
+                                                    <th>2019</th>
+                                                    <th>2020</th>
+                                                    <th>2021</th>
+                                                    <th>2022</th>
+                                                    <th>2023</th>
+                                                    <th>2024</th>
+                                                    <th>2025</th>
+
+                                                    <th>Profit Pool</th>
+                                                    <th>Metric</th>
+                                                    <th>Mean</th>
+                                                    <th>Variation</th>
+                                                    <th>2019</th>
+                                                    <th>2020</th>
+                                                    <th>2021</th>
+                                                    <th>2022</th>
+                                                    <th>2023</th>
+                                                    <th>2024</th>
+                                                    <th>2025</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="a-tbody" id="tbody_payer_strategy_tester">
+                                            </tbody>
+                                        </table>
+                                        <button class="a-btn a-btn-primary a-btn-lg save_payer">Save</button>
+                                    </div>
+                                    <div class="a-tab-target-item" id="strategies_impact_payer">
+                                        <div class="row bg-gray">
+                                            <div class="col-3" >
+                                                <div class="p-2">                                
+                                                    <select id="paySelect"  class="a-select">            
+                                                     </select>
+                                                   </div> 
+                                                </div>
+                                            <div class="col-3" >
+                                                <div class="p-2">
+                                                    <select id="strategy_metric_payer" class="a-select">
+                                                        <option value="Revenue">Revenue</option>
+                                                        <option value="Costs">Costs</option>
+                                                        <option value="Profit">Profit</option>                                    
+                                                    </select>                                                
+                                                </div>                                                
+                                            </div>
+                                            <div class="col-3" >
+                                            <div class="p-2"><button class="a-btn a-btn-secondary a-btn-lg getPayerImpact" id="getPayerImpact">Get Impact</button>
+                                            </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div id="Payer_Strategy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a-tab-target-item" id="strategies_impac_health_system">
+                                        <div class="row bg-gray">
+                                            <div class="col-3" >
+                                                <div class="p-2">                                
+                                                    <select id="provSelect"  class="a-select">            
+                                                     </select>
+                                                   </div> 
+                                                </div>
+                                            <div class="col-3" >
+                                                <div class="p-2">
+                                                    <select id="strategy_metric_prov" class="a-select">
+                                                        <option value="Revenue">Revenue</option>
+                                                        <option value="Costs">Costs</option>
+                                                        <option value="Profit">Profit</option>                                    
+                                                    </select>                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-3" >
+                                                <div class="p-2"><button class="a-btn a-btn-secondary a-btn-lg getProvImpact" id="getProvImpact">Get Impact</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div id="Provider_Strategy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="footer-wrapper flex-shrink-0 a-p-10 text-center a-bg-dark">
+                <div class="a-footer">
+                  © 2020 PwC. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+  <!-- Use cdn assets -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://pwcappkit-static.azureedge.net/cdn/release/3.0.0/vendor.min.js"></script>
+  <script src="https://pwcappkit-static.azureedge.net/cdn/release/3.0.0/appkit.min.js"></script>
+  <script src="./js/app/strategyTester.js"></script>  
+</html>

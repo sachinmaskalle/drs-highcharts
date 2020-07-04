@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Scenario Provider</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" />
+    <!-- Use cdn assets -->
+    <link rel="stylesheet" href="https://pwcappkit-static.azureedge.net/cdn/release/3.0.0/vendor.min.css">
+    <link rel="stylesheet" href=" https://pwcappkit-static.azureedge.net/cdn/release/3.0.0/appkit.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"> -->
+    <link rel="stylesheet" href="./css/custom-styles.css">
+  </head>
+
+  <body>
+    <div class="d-flex flex-column h-100">
+        <div class="a-header d-flex align-items-center justify-content-between a-px-20">
+            <div class="d-flex align-items-center">
+                <div><img src="./assets/Logo_Primary_Black.png" alt=""></div>
+                <span class="divider a-mx-20"></span>
+                <div class="font-weight-medium main-header">Dynamic and Resilient Strategy</div>
+                <span class="divider-full a-ml-20 a-mr-10"></span>
+                <div class="a-dropdown a-dropdown-one">
+                    <div class="a-dropdown-toggle">
+                        <div class="a-choosen-text">Current State</div>
+                        <i class="a-icon appkiticon icon-down-chevron-fill"></i>
+                    </div>
+                    <div class="a-dropdown-menu">
+                        <ul>
+                            <li><a href="./current-summary.html">Current State Summary</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="a-dropdown a-dropdown-one">
+                    <div class="a-dropdown-toggle">
+                        <div class="a-choosen-text">Future Scenarios</div>
+                        <i class="a-icon appkiticon icon-down-chevron-fill"></i>
+                    </div>
+                    <div class="a-dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="./future-scenarios.html">Scenario Editor</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="a-dropdown a-dropdown-one">
+                    <div class="a-dropdown-toggle">
+                        <div class="a-choosen-text">Results</div>
+                        <i class="a-icon appkiticon icon-down-chevron-fill"></i>
+                    </div>
+                    <div class="a-dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="./market-level.html">Market Level</a>
+                            </li>
+                            <li>
+                                <a href="./scenariopayer.html">Firm Level Payer</a>
+                            </li>
+                            <li>
+                                <a href="#">Firm Level Provider</a>
+                            </li>
+                            <li>
+                                <a href="./strategyTester.html">Strategy Tester</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <a class="a-btn a-btn-primary a-btn-lg" href="./index.html">SELECT NEW MARKET</a>
+            </div>
+        </div>
+        <div class="d-flex content flex-fill">
+            <div class="main-wrapper flex-fill d-flex flex-column">
+                <div class="a-p-20 text-center rounded ajax-loader">
+                    <span class="a-loading loading-large a-dark"></span>
+                    <div class="a-text-black a-mt-10 a-h6">Strategy is being made real. Please wait ....</div>
+                </div>
+                <div class="container-fluid" style="visibility:hidden;">
+                    <div class="row">
+                        <div class="col">
+                            <div aria-label="breadcrumb" class="a-breadcrumbs a-mt-20">
+                                <div class="a-bread-item text-decoration-none">
+                                    <a href="./current-summary.html"><span class="appkiticon icon-home-fill"></span></a>
+                                </div>
+                                <span class="a-divider">/</span>
+                                <div class="a-bread-item">
+                                    <span>Results</span>
+                                </div>
+                                <span class="a-divider">/</span>
+                                <div class="a-bread-item a-current">
+                                    <span>Firm Level Provider</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-2">
+                              <label>Year 2018</label>
+                            </div>
+                        </div>
+          
+                        <div class="col">
+                            <div class="p-2 d-flex" >
+                                <span class="metro-label">Metro Areas</span>  
+                              <select class="a-select msa-metro">
+                              </select>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="row bg-gray" >
+                        <div class="col">
+                            <div class="p-2">                                
+                             <select id="provSelect"  class="a-select">            
+                              </select>
+                            </div>  
+                            <div><button class="a-btn a-btn-secondary a-btn-lg getImpact" id="getImpact">Get Impact</button>
+                            </div>                             
+                          </div> 
+                        <div class="col">
+                            <div class="p-2">
+                                <select id="provMetric" class="a-select">
+                                    <option value="Revenue">Revenue</option>
+                                    <option value="Operating Costs">Operating Costs</option>
+                                    <option value="Profit">Profit</option>
+                                    <option value="Profit Margin">Profit Margin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-2">
+                                <select  id="provScenario" class="a-select">
+                                    <option value="Scenario 1">The standoff continues</option>
+                                    <option value="Scenario 2">Consumers take charge</option>
+                                    <option value="Scenario 3">Mean case</option>
+                                    <option value="Scenario 4">Value based care expands</option>
+                                    <option value="Scenario 5">Custom scenario 1</option>
+                                    <option value="Scenario 6">Custom scenario 2</option>
+                                    <option value="Scenario 7">Custom scenario 3</option>
+                                    <option value="Scenario 8">Custom scenario 4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-2 a-bg-white">
+                                Strategic Goals
+                               
+                                <label class="a-form-label" for="Strategic_Cost"></label>
+                                <input class="a-text-input" id="Strategic_Cost" placeholder="Goal from cost reduction">
+                                <label class="a-form-label" for="Strategic_Target"></label>
+                                <input class="a-text-input" id="Strategic_Target" placeholder="Set strategic goal">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row bg-gray">
+                        <div class="col">
+                            <div id="Provider_Scenario">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="footer-wrapper flex-shrink-0 a-p-10 text-center a-bg-dark">
+                <div class="a-footer">
+                  © 2020 PwC. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+  <!-- Use cdn assets -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://pwcappkit-static.azureedge.net/cdn/release/3.0.0/vendor.min.js"></script>
+  <script src="https://pwcappkit-static.azureedge.net/cdn/release/3.0.0/appkit.min.js"></script>
+  <script src="./js/app/scenario-provider.js"></script>
+  
+</html>
